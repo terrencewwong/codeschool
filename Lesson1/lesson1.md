@@ -4,7 +4,7 @@
 
 ### Instructions
 
-Download the starter code from here
+Download the starter code from [here](https://github.com/wongterrencew/codeschool/archive/master.zip)
 
 You will find six files in the started code:
 
