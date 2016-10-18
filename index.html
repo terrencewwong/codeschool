@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Code School by wongterrencew</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Code School</h1>
+      <h2 class="project-tagline">Lesson 1 - Assignment</h2>
+      <a href="https://github.com/wongterrencew/codeschool" class="btn">View on GitHub</a>
+      <a href="https://github.com/wongterrencew/codeschool/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/wongterrencew/codeschool/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="lesson-1---assignment" class="anchor" href="#lesson-1---assignment" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Lesson 1 - Assignment</h1>
+
+<h2>
+<a id="fun-with-strings" class="anchor" href="#fun-with-strings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Fun with strings</h2>
+
+<h3>
+<a id="instructions" class="anchor" href="#instructions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Instructions</h3>
+
+<p>Download the starter code from <a href="https://github.com/wongterrencew/codeschool/archive/master.zip">here</a></p>
+
+<p>You will find six files in the started code:</p>
+
+<pre><code>1. lesson1_task0.rb
+2. lesson1_task0_test.rb
+3. lesson1_task1.rb
+4. lesson1_task1_test.rb
+5. lesson1_task2.rb
+6. lesson1_task2_test.rb
+</code></pre>
+
+<p>The code that you write should go in <code>lesson1_task*.rb</code></p>
+
+<p>The other files, <code>lesson1_task*_test.rb</code> are test files that should help you test if your code is correct.</p>
+
+<p>To use the test files do the following in the terminal:</p>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">&gt;</span> ruby lesson1_task0_test.rb lesson1_task0.rb</pre></div>
+
+<p>You should see output like the following:</p>
+
+<pre><code>✓ Test 1
+✗ Test 2
+  Expected: "Stevie Wonder"
+  Got: "StevieWonder"
+</code></pre>
+
+<p>In this case <code>Expected</code> is the correct answer that we're expecting and <code>Got</code> is the incorrect answer that your solution produced.</p>
+
+<h3>
+<a id="task-0-string-concatenation" class="anchor" href="#task-0-string-concatenation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Task 0: String concatenation</h3>
+
+<p>In class we talked about using variables inside of strings. The big fancy word for this is called "string interpolation", but in Typeform this is more commonly known as "piping".</p>
+
+<p>Example:</p>
+
+<div class="highlight highlight-source-ruby"><pre>first_name <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Beardy<span class="pl-pds">"</span></span>
+last_name <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Man<span class="pl-pds">"</span></span>
+
+puts <span class="pl-s"><span class="pl-pds">"</span>Hello, <span class="pl-pse">#{</span><span class="pl-s1">first_name</span><span class="pl-pse"><span class="pl-s1">}</span></span> <span class="pl-pse">#{</span><span class="pl-s1">last_name</span><span class="pl-pse"><span class="pl-s1">}</span></span>!<span class="pl-pds">"</span></span> <span class="pl-c"># "Hello, Beardy Man!"</span></pre></div>
+
+<p>However... Ruby also allows you to use strings and variables together using "string concatenation". This is easiest shown with an example:</p>
+
+<p>Example:</p>
+
+<div class="highlight highlight-source-ruby"><pre>first_name <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Beardy<span class="pl-pds">"</span></span>
+last_name <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Man<span class="pl-pds">"</span></span>
+
+puts <span class="pl-s"><span class="pl-pds">"</span>Hello, <span class="pl-pds">"</span></span> <span class="pl-k">+</span> fist_name <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span> <span class="pl-k">+</span> last_name <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span>!<span class="pl-pds">"</span></span> <span class="pl-c"># "Hello, Beardy Man"!</span></pre></div>
+
+<p>The two examples above contain exactly the same output, but they're just written in different ways. Sometimes you may find it more convenient to use string interpolation and at other times you may find it more convenient to use string concatenation, in general there is no strict rule when to use either technique.</p>
+
+<p>In this task you will write a method whose inputs are a first name and last name and whose output is the persons full name.</p>
+
+<p>Example:</p>
+
+<div class="highlight highlight-source-ruby"><pre>full_name(<span class="pl-s"><span class="pl-pds">"</span>Marvin<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>Gaye<span class="pl-pds">"</span></span>) <span class="pl-c"># "Marvin Gaye"</span>
+full_name(<span class="pl-s"><span class="pl-pds">"</span>Diana<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>Ross<span class="pl-pds">"</span></span>) <span class="pl-c"># "Diana Ross"</span></pre></div>
+
+<p>Hint: to define a function that accepts two arguments you use the following syntax</p>
+
+<div class="highlight highlight-source-ruby"><pre><span class="pl-k">def</span> <span class="pl-en">method</span>(<span class="pl-smi">arg1</span>, <span class="pl-smi">arg2</span>)
+  <span class="pl-c"># code that does stuff would go here</span>
+<span class="pl-k">end</span></pre></div>
+
+<p>Please upload a ruby file named <code>lesson1_task0.rb</code> containing the method <code>full_name</code>. Your code should use string concatenation and not string interpolation.</p>
+
+<h3>
+<a id="task-1-a-better-capitalize" class="anchor" href="#task-1-a-better-capitalize" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Task 1: A better <code>capitalize</code>
+</h3>
+
+<p>Ruby is a language with a lot of convenience methods, one of which is the string method <code>capitalize</code>. However... this method doesn't work on words that begin with an accented character :(</p>
+
+<p>Try the following in <code>irb</code></p>
+
+<pre><code>&gt; "árbol".capitalize
+</code></pre>
+
+<p>What do you expect the output to be? What is the actual output?</p>
+
+<p>In this task you should write a method <code>spanish_capitalize</code> that can capitalize normal words as well as words that begin with an accented character.</p>
+
+<p>Example:</p>
+
+<div class="highlight highlight-source-ruby"><pre>spanish_capitalize(<span class="pl-s"><span class="pl-pds">"</span>árbol<span class="pl-pds">"</span></span>) <span class="pl-c"># "Árbol"</span>
+spanish_captialize(<span class="pl-s"><span class="pl-pds">"</span>ése<span class="pl-pds">"</span></span>) <span class="pl-c"># "Ése"</span>
+spanish_capitalize(<span class="pl-s"><span class="pl-pds">"</span>typeform<span class="pl-pds">"</span></span>) <span class="pl-c"># "Typeform"</span></pre></div>
+
+<p>Hint: You can find pull out parts of a string using square brackets. The first letter starts at 0, the second at 1, etc.</p>
+
+<div class="highlight highlight-source-ruby"><pre><span class="pl-s"><span class="pl-pds">"</span>Typeform<span class="pl-pds">"</span></span>[<span class="pl-c1">0</span>] <span class="pl-c"># "T"</span>
+<span class="pl-s"><span class="pl-pds">"</span>Typeform<span class="pl-pds">"</span></span>[<span class="pl-c1">1</span>] <span class="pl-c"># "y"</span>
+<span class="pl-s"><span class="pl-pds">"</span>Typeform<span class="pl-pds">"</span></span>[<span class="pl-c1">0</span>..<span class="pl-c1">1</span>] <span class="pl-c"># "Ty"</span>
+
+word <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Typeform<span class="pl-pds">"</span></span>
+word[<span class="pl-c1">1</span>..word.length] <span class="pl-c"># "ypeform"</span></pre></div>
+
+<p>Please upload a ruby file named <code>lesson1_task1.rb</code> containing the method <code>spanish_capitalize</code>.</p>
+
+<h3>
+<a id="task-2-hipster-neighborhoods" class="anchor" href="#task-2-hipster-neighborhoods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Task 2: Hipster neighborhoods</h3>
+
+<p>Hipsterism has hit the world hard...! And behind every great hipster neighborhood is a great hipster neighborhood name! Have you ever been to "SoHo" or "TriBeCa" in NYC? :)</p>
+
+<p>In this task you will need to write a method whose inputs are a neighborhood abbreviation and its full name and whose output is the abbreviated name but properly capitalized.</p>
+
+<p>Example:</p>
+
+<ul>
+<li><code>hipster_spelling('soho', 'south of houston') -&gt; 'SoHo'</code></li>
+<li><code>hipster_spelling('tribeca', 'triangle below canal street') -&gt; 'TriBeCa'</code></li>
+</ul>
+
+<p>A hipster-neighborhood spelling can be found with the following algorithm:</p>
+
+<ol>
+<li>For each word in the full name</li>
+<li>Find the longest common prefix with the abbreviation</li>
+<li>Capitalize the first letter of the longest common prefix</li>
+<li>Chop off the longest common prefix from the beginning of the abbreivation</li>
+<li>Repeat with each word and the remaining abbreviation until done</li>
+</ol>
+
+<p>If you were to write out the steps for an example, you could imagine a process that looks like this:</p>
+
+<ol>
+<li>
+<strong><em>so</em></strong>ho, <strong><em>so</em></strong>uth -&gt; "So" (longest common prefix is 'so')</li>
+<li>
+<del>so</del>ho, of -&gt; "" (there is no longest common prefix)</li>
+<li>
+<del>so</del><strong><em>ho</em></strong>, <strong><em>ho</em></strong>uston -&gt; "Ho" (longest common prefix is 'ho')</li>
+</ol>
+
+<p>Note: The <del>strikethrough</del> in the example above indicates that part of the abbreviation is not considered when finding the longest prefix.</p>
+
+<h4>
+<a id="part-1" class="anchor" href="#part-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Part 1</h4>
+
+<p>Write a method <code>longest_common_prefix</code> that can find the longest common prefix between two words</p>
+
+<div class="highlight highlight-source-ruby"><pre><span class="pl-k">def</span> <span class="pl-en">longest_common_prefix</span>(<span class="pl-smi">word1</span>, <span class="pl-smi">word2</span>)
+  <span class="pl-c"># your implementation would go here  </span>
+<span class="pl-k">end</span></pre></div>
+
+<h4>
+<a id="part-2" class="anchor" href="#part-2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Part 2</h4>
+
+<p>Write a method <code>hipster_spelling</code> that returns the hipster spelling of a given neighborhood</p>
+
+<div class="highlight highlight-source-ruby"><pre><span class="pl-k">def</span> <span class="pl-en">hipster_spelling</span>(<span class="pl-smi">abbreviation</span>, <span class="pl-smi">full_name</span>)
+  <span class="pl-c"># your implementation would go here</span>
+<span class="pl-k">end</span></pre></div>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/wongterrencew/codeschool">Code School</a> is maintained by <a href="https://github.com/wongterrencew">wongterrencew</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
